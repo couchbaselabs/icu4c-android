@@ -7,13 +7,18 @@ $git clone https://github.com/couchbaselabs/icu4c-android.git
 $git submodule update --init --recursive
 ```
 
-## How to build with NDK
+### How to build with NDK
 ```
 ndk-build -C jni
 ```
 
-## Outputs
+### Outputs
 ```
 obj/local/<TARGET_ARCH_ABI>/libicuuc_static.a
 obj/local/<TARGET_ARCH_ABI>/libicui18n_static.a
 ```
+
+### About Data file
+https://github.com/couchbaselabs/icu4c-android/tree/master/data
+
+
