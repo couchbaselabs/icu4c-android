@@ -36,3 +36,9 @@ cd /tmp/icudt53l/
 ~/github/icu4c-android/icu4c/bin/gencmn -v -n icudt53l 0 < ../out.lst 
 ```
 * Output => /tmp/icudt53l/icudt53l.dat
+
+
+### out.lst
+* **It is list of data files in current icudt53l.dat**
+
+
