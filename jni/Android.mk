@@ -124,7 +124,8 @@ local_cflags += -DU_HAVE_NL_LANGINFO_CODESET=0
 local_cflags += -D_REENTRANT
 local_cflags += -DU_COMMON_IMPLEMENTATION
 local_cflags += -DU_TIMEZONE=0
-local_cflags += -DUCONFIG_ONLY_COLLATION
+local_cflags += -DUCONFIG_ONLY_COLLATION=1
+local_cflags += -DUCONFIG_NO_LEGACY_CONVERSION=1
 
 local_cflags += -O3 -fvisibility=hidden
 
@@ -251,7 +252,8 @@ c_includes := \
 
 local_cflags := -D_REENTRANT
 local_cflags += -DU_I18N_IMPLEMENTATION
-local_cflags += -DUCONFIG_ONLY_COLLATION
+local_cflags += -DUCONFIG_ONLY_COLLATION=1
+local_cflags += -DUCONFIG_NO_LEGACY_CONVERSION=1
 local_cflags += -O3 -fvisibility=hidden
 
 #
