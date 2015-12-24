@@ -10,9 +10,9 @@ build_osx() {
 	ARCH=$1
   	echo "Building osx libicuuc.a and libicui18n.a for ${ARCH}"
   	if [[ $ARCH == "x86" ]]; then
-  		./configure --enable-static --with-library-bits=32
+  		./runConfigureICU MacOSX --enable-static --with-library-bits=32
   	else
-		./configure --enable-static
+		./runConfigureICU MacOSX --enable-static
 	fi
 	make clean
 	cd ./common
