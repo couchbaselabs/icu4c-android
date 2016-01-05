@@ -11,17 +11,17 @@ build_linux() {
 	ARCH=$1
   	echo "Building osx libicuuc.a and libicui18n.a for ${ARCH}"
   	if [[ $ARCH == "x86" ]]; then
-  		./runConfigureICU Linux --enable-static --with-library-bits=32
+  		CPPFLAGS="-DPIC -fPIC" ./runConfigureICU Linux/gcc --enable-static --with-library-bits=32
   	else
-		./runConfigureICU Linux --enable-static
+		CPPFLAGS="-DPIC -fPIC" ./runConfigureICU Linux/gcc --enable-static
 	fi
 	make clean
-	make
+	make VERBOSE=1
 	file lib/libicuuc.a
 	file lib/libicui18n.a
-	file lib/libicudata.a.a
+	file lib/libicudata.a
 	mkdir -p ../${OUTPUT_DIR}/${ARCH}/
-	cp lib/libicuuc.a ../${OUTPUT_DIR}/${ARCH}/
+	cp lib/libicuuc.a   ../${OUTPUT_DIR}/${ARCH}/
 	cp lib/libicui18n.a ../${OUTPUT_DIR}/${ARCH}/
 	cp lib/libicudata.a ../${OUTPUT_DIR}/${ARCH}/
 }
