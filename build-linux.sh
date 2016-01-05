@@ -15,18 +15,15 @@ build_linux() {
   	else
 		./runConfigureICU Linux --enable-static
 	fi
-  	make clean
-	cd ./common
+	make clean
 	make
-	cd ..
-	cd ./i18n
-	make
-	cd ..
 	file lib/libicuuc.a
 	file lib/libicui18n.a
+	file lib/libicudata.a.a
 	mkdir -p ../${OUTPUT_DIR}/${ARCH}/
 	cp lib/libicuuc.a ../${OUTPUT_DIR}/${ARCH}/
 	cp lib/libicui18n.a ../${OUTPUT_DIR}/${ARCH}/
+	cp lib/libicudata.a ../${OUTPUT_DIR}/${ARCH}/
 }
 
 build_linux "x86"
