@@ -9,3 +9,6 @@ build-osx:
 
 build-linux:
 	./build-linux.sh
+
+#build-windows:
+#	build-windows.cmd

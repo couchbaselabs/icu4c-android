@@ -1,0 +1,1 @@
+CPPFLAGS="-DUCONFIG_ONLY_COLLATION=1 -DUCONFIG_NO_LEGACY_CONVERSION=1" ./runConfigureICU Cygwin/MSVC --enable-static --disable-shared
