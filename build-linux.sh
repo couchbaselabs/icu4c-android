@@ -6,6 +6,7 @@ mkdir -p ${OUTPUT_DIR}
 
 # Extract codes
 tar -xzvf download/icu4c-53_1-src.tgz
+cp ./download/icudt53l.dat ./icu/source/data/in/
 
 cd ./icu/source
 
@@ -13,9 +14,9 @@ build_linux() {
 	ARCH=$1
   	echo "Building linux libicuuc.a and libicui18n.a for ${ARCH}"
   	if [[ $ARCH == "x86" ]]; then
-  		CPPFLAGS="-DPIC -fPIC" ./runConfigureICU Linux/gcc --enable-static --disable-shared --with-library-bits=32
+  		CPPFLAGS="-DPIC -fPIC -DUCONFIG_ONLY_COLLATION=1 -DUCONFIG_NO_LEGACY_CONVERSION=1" ./runConfigureICU Linux/gcc --enable-static --disable-shared --with-library-bits=32
   	else
-		CPPFLAGS="-DPIC -fPIC" ./runConfigureICU Linux/gcc --enable-static --disable-shared
+		CPPFLAGS="-DPIC -fPIC -DUCONFIG_ONLY_COLLATION=1 -DUCONFIG_NO_LEGACY_CONVERSION=1" ./runConfigureICU Linux/gcc --enable-static --disable-shared
 	fi
 	make clean
 	make VERBOSE=1
