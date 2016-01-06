@@ -1,3 +1,4 @@
+#!/bin/bash
 
 # Build OSX binaries:
 OUTPUT_DIR="libs/linux"
