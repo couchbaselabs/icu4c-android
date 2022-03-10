@@ -1,3 +1,5 @@
+⚠️ This repo is obsolete.  It was (possibly) used for building Couchbase Lite Java / Android 1.x.
+
 # icu4c-android
 This is ICU4C build project for Android. This builds ICU common and i18n static libraries which are used by Couchbase Lite Android.
 
